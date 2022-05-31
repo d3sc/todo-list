@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: #18191a;
+}
+
+.container {
+  /* border: 2px solid white; */
+  width: 50%;
+  height: 100vh;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 30px 40px;
+  margin-top: 20px;
+  transition: all 0.5s ease;
+}
+
+.container h1 {
+  color: #fff;
+  font-weight: 500;
+}
+
+#newtask {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 30px 20px;
+  border-radius: 6px;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.3);
+}
+
+#inputBox {
+  width: 85%;
+  height: 45px;
+  font-size: 15px;
+  border: 2px solid #d1d3d4;
+  border-radius: 5px;
+  outline: none;
+  padding: 12px;
+  color: #111;
+  font-weight: 300;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+#inputBox:focus {
+  border-color: #18191a;
+}
+
+#push {
+  position: relative;
+  width: 10%;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 1em;
+  background-color: #18191a;
+  border: none;
+  color: #fff;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+#push.active {
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+#push i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2em;
+}
+
+#wrapping-tasks {
+  width: 100%;
+  background-color: #fff;
+  padding: 30px 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.task {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #d1d3d4;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  font-weight: 400;
+  text-align: start;
+}
+.delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 1.3em;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.delete:hover {
+  opacity: 0.8;
+  transform: translateY(-3px);
+}
+
+/* ! Alerts */
+.alert {
+  position: fixed;
+  top: -150px;
+  left: 35vw;
+  /* display: none; */
+  width: 400px;
+  height: 50px;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  align-items: center;
+  z-index: 5;
+  /* position: relative; */
+  border-radius: 6px;
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+  transition: all 0.2s ease;
+}
+.alert-msg {
+  margin-top: 25px;
+  font-size: 1em;
+}
+.main-alerts i {
+  font-size: 1.8em;
+  transform: translate(-3px, 3px);
+}
+
+/* * Confirm */
+.confirm {
+  position: fixed;
+  left: 35vw;
+  top: -150px;
+  /* transform: translateY(-250px); */
+  /* display: none; */
+  width: 400px;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  align-items: center;
+  z-index: 5;
+  /* position: relative; */
+  border-radius: 6px;
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #fd7e14;
+  transition: all 0.2s ease;
+}
+.confirm-msg {
+  margin-top: 25px;
+  font-size: 1.2em;
+}
+.main-confirm i {
+  font-size: 1.8em;
+  transform: translate(-3px, 3px);
+}
+
+.question {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.question button {
+  background-color: #842029;
+  color: #fff;
+  padding: 6px 16px;
+  cursor: pointer;
+  border-radius: 3px;
+  border: none;
+  margin-left: 5px;
+}
+#yes {
+  margin-right: 15px;
+}
+
+.deleteAll {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 6px 6px;
+  cursor: pointer;
+  border-radius: 3px;
+  border: none;
+  margin-left: 5px;
+}
+
+.deleteAll:hover {
+  opacity: 0.8;
+}
+
+.pendingTasks {
+  font-size: 1em;
+}
+
+@media (max-width: 1180px) {
+  .container {
+    width: 70%;
+  }
+  #inputBox {
+    width: 85%;
+  }
+  #push {
+    width: 10%;
+  }
+}
+
+@media (max-width: 745px) {
+  .container {
+    width: 100%;
+  }
+  #inputBox {
+    width: 80%;
+  }
+  #push {
+    width: 15%;
+    font-size: 0.8em;
+  }
+  .task {
+    flex-wrap: wrap;
+    text-align: center;
+    overflow-x: scroll;
+    font-size: 0.9em;
+    align-content: center;
+  }
+  .delete {
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    padding: 5px 0px;
+    font-size: 1.1em;
+    margin-left: 20px;
+  }
+  .alert {
+    transform: translateY(0px);
+    left: calc(30vw + 3vw);
+    font-size: 0.8em;
+    width: 200px;
+    height: auto;
+    padding-bottom: 15px;
+  }
+}
+
+@media (max-width: 428px) {
+  .alert {
+    left: calc(22vw + 2vw);
+  }
+}

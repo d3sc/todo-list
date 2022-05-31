@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Todo List</title>
+
+    <!--* My CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!--* My Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400&family=Montserrat:wght@500&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,600&family=Pacifico&family=Poppins:wght@100;200;300;400;500;600;700&family=Raleway:ital,wght@0,300;0,500;1,300&family=Water+Brush&display=swap" rel="stylesheet" />
+
+    <!--* My Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  </head>
+  <body>
+    <center>
+      <div class="alert">
+        <div class="main-alerts">
+          <i class="bx bx-error"></i>
+          <span class="alert-msg">error</span>
+        </div>
+      </div>
+    </center>
+    <center>
+      <div class="confirm">
+        <div class="main-confirm">
+          <i class="bx bx-error"></i>
+          <span class="confirm-msg">Confirm?</span>
+          <div class="question">
+            <button id="yes">yes</button>
+            <button id="no">no</button>
+          </div>
+        </div>
+      </div>
+    </center>
+    <div class="container">
+      <h1>Todo List daily</h1>
+      <div id="newtask">
+        <input type="text" placeholder="Enter text.." id="inputBox" />
+        <button id="push"><i class="bx bx-plus"></i></button>
+      </div>
+      <div id="wrapping-tasks">
+        <ul class="tasks"></ul>
+        <span class="pendingTasks">You have <span class="pendingNumb"></span> pending tasks</span>
+        <button class="deleteAll" onclick="deleteAllConfirm();">Delete All</button>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

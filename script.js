@@ -30,7 +30,7 @@ listArr = JSON.parse(getLocalStorage);
 // Memberikan Event pada saat Tombol ditekan
 push.onclick = () => {
   let userData = inputBox.value;
-  if (userData.length >= 30) {
+  if (userData.length >= 50) {
     return myAlerts("the characters included are so many!");
   } else if (userData.length < 1) {
     return myAlerts("Univolved value!");
@@ -96,7 +96,7 @@ function deleteAll() {
 inputBox.addEventListener("keyup", (e) => {
   if (e.key == "Enter") {
     let userData = inputBox.value;
-    if (userData.length >= 30) {
+    if (userData.length >= 50) {
       return myAlerts("the characters included are so many!");
     } else if (userData.length < 1) {
       return myAlerts("Univolved value!");

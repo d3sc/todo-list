@@ -269,10 +269,20 @@ body {
     height: auto;
     padding-bottom: 15px;
   }
+  .confirm {
+    left: calc(20% - 5vw);
+  }
 }
 
 @media (max-width: 428px) {
   .alert {
     left: calc(22vw + 2vw);
+  }
+  .confirm {
+    width: 300px;
+    left: calc(12% - 5vw);
+  }
+  .confirm-msg {
+    font-size: 18px;
   }
 }
